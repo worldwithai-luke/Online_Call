@@ -1,0 +1,117 @@
+.video {
+  width: 75%;
+  height: 100%;
+  background-color: #c2c2c2;
+  padding-top: 3px;
+  padding-left: 1px;
+  padding-right: 1px;
+  border-radius: 3px;
+  overflow-y: auto;
+}
+
+#video-grid {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+#video-control {
+  height: 60px;
+  width: 75%;
+  background-color: rgb(245, 245, 245);
+  position: fixed;
+  bottom: 0;
+  z-index: 5000000;
+}
+.control_flex {
+  display: flex;
+  justify-content: space-around;
+}
+.control {
+  margin-top: 5px;
+  margin-left: 30%;
+  display: flex;
+}
+.control > i {
+  font-size: 1.5rem;
+  padding: 10px;
+  margin-left: 5px;
+  border-radius: 20px;
+  color: rgb(179, 179, 179);
+  border: 1px solid rgb(224, 224, 224);
+  cursor: pointer;
+}
+.control > a {
+  text-decoration: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 5px;
+}
+.control > i:hover {
+  border-color: rgb(155, 155, 155);
+}
+#hang-up {
+  color: rgb(255, 94, 94);
+}
+#hang-up:hover {
+  color: red;
+}
+#microphone:hover {
+  background-color: rgb(255, 101, 101);
+  color: rgb(231, 31, 31);
+}
+#videoMute:hover {
+  background-color: rgb(255, 101, 101);
+  color: rgb(243, 26, 26);
+}
+#share_screen {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #0096ff;
+  color: #ffffff;
+  cursor: pointer;
+}
+#share_screen:hover {
+  background-color: #0096ff;
+}
+
+video {
+  width: 24%;
+  height: auto;
+  min-width: 150px;
+  min-height: 100px;
+}
+.videoElement {
+  border-radius: 10px;
+  margin: 4px;
+  cursor: pointer;
+  resize: both;
+  overflow: hidden;
+  border: 2px solid transparent;
+  position: relative;
+}
+.videoElement:hover {
+  border-color: #0096ff;
+}
+.videoElement.resizing {
+  border-color: #0096ff;
+  box-shadow: 0 0 10px rgba(0, 150, 255, 0.3);
+}
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(-45deg, transparent 30%, #0096ff 30%, #0096ff 70%, transparent 70%);
+  cursor: nw-resize;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.videoElement:hover .resize-handle {
+  opacity: 1;
+}
+a {
+  text-decoration: none;
+}
