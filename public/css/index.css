@@ -1,151 +1,207 @@
-*{
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
     margin: 0;
-    border: 0;
-    font-family: "Sen", sans-serif;
-        /* got from stack overflow */
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none;
-            /* got from stack overflow */
-}
-body{
-    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.nav{
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+.nav {
     width: 100%;
-    height: 60px;
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid black;
-    display: -webkit-flex;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
     justify-content: space-between;
-}
-.left{
-    margin-left: 2rem;
-    margin-top: auto;
-    margin-bottom: auto;
-    cursor: pointer;
-}
-.left > h2 > u{
-    text-decoration: underline;
-    text-decoration-color: green;
-    color: #0096ff;
-}
-.left > h2{
-    text-align: center;
-    color: #0096ff;
-}
-.right{
-    margin-right: 2rem;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-#datetime{
-    color: #5F637A;
-}
-.mainBody{
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-.mainBody > h1 > u{
-    text-decoration: underline;
-    text-decoration-color: green;
-    color: #0096ff;
-}
-.mainBody > h1{
-    font-size: 8rem;
-    text-align: center;
-    color: #0096ff;
-}
-.mainBody > P{
-    font-size: 3.6rem;
-    text-align: center;
-    color: #212121;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.name > i, .linkorid > i{
-    color: #0096ff;
-    margin-left: 6px;
-    margin-right: 2px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-p >i{
-    margin-right: 6px;
-}
-.form{
-    width: 450px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.meetNew,.meetJoin {
-    display: flex;
-    justify-content: safe;
-}
-.name, .linkorid{
-    height: 40px;
-    width: inherit;
-    display: flex;
-    border: 1px solid #0096ff;
-    border-radius: 6px;
-}
-#nameInput, #linkorid{
-    height: 100%;
-    font-size: larger;
-    background-color: transparent;
-}
-#nameInput:focus, #linkorid:focus{
-    outline: none;
-    background-color: transparent;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.newMeetBtn, .meetJoinBtn{
-    padding: 10px;
-    margin-left: 40px;
-    background-color: #0096ff;
-    border-radius: 6px;
+.left {
+    margin-left: 2rem;
     cursor: pointer;
 }
-.newMeetBtn:hover, .meetJoinBtn:hover{
-    background-color: #0096ff;
-    transition: 0.3s;
+
+.left h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4F46E5;
+    letter-spacing: -0.5px;
 }
-.newMeetBtn>p, .meetJoinBtn>p{
-    font-size: large;
+
+.right {
+    margin-right: 2rem;
+}
+
+#datetime {
+    color: #6B7280;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.mainBody {
+    width: min(90%, 600px);
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.mainBody h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
     color: white;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
 }
-.hr{
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border: 0.2px solid #0096ff;
+
+.mainBody p {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    font-weight: 300;
+    line-height: 1.4;
 }
-#footer{
-    font-size: medium;
+
+.form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
-a{
+
+.meetNew, .meetJoin {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: stretch;
+}
+
+.name, .linkorid {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #F9FAFB;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 0 1rem;
+    transition: all 0.3s ease;
+}
+
+.name:focus-within, .linkorid:focus-within {
+    border-color: #4F46E5;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.name i, .linkorid i {
+    color: #6B7280;
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+}
+
+#nameInput, #linkorid {
+    flex: 1;
+    height: 52px;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+#nameInput:focus, #linkorid:focus {
+    outline: none;
+}
+
+#nameInput::placeholder, #linkorid::placeholder {
+    color: #9CA3AF;
+    font-weight: 400;
+}
+
+.newMeetBtn, .meetJoinBtn {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newMeetBtn:hover, .meetJoinBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+}
+
+.newMeetBtn p, .meetJoinBtn p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hr {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E5E7EB, transparent);
+    margin: 2rem 0 1.5rem;
+    border: none;
+}
+
+#footer {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 2rem;
+}
+
+a {
     text-decoration: none;
     cursor: pointer;
 }
-#fname{
-    color: #0096ff;
+
+#fname {
+    color: #4F46E5;
 }
-#linkdin{
-    color: rgb(0, 110, 255);
+
+#linkdin {
+    color: #0077B5;
 }
-#github{
-    color: rgb(56, 56, 56);
+
+#github {
+    color: #333;
 }
-.error{
+
+.error {
     position: absolute;
     top: -150px;
     height: 2px;
@@ -153,8 +209,42 @@ a{
     visibility: visible;
     z-index: 500;
 }
-@media only screen and (max-width: 940px){
-    .mainBody{
-        width: 90%;
+
+@media only screen and (max-width: 768px) {
+    .nav {
+        height: 60px;
+        padding: 0 1rem;
+    }
+    
+    .left {
+        margin-left: 0;
+    }
+    
+    .right {
+        margin-right: 0;
+    }
+    
+    .left h2 {
+        font-size: 1.2rem;
+    }
+    
+    .mainBody {
+        margin: 2rem auto;
+    }
+    
+    .form {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+    
+    .meetNew, .meetJoin {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .newMeetBtn, .meetJoinBtn {
+        min-width: unset;
+        width: 100%;
+        height: 52px;
     }
 }
